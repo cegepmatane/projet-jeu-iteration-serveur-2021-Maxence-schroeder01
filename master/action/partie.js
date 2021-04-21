@@ -45,9 +45,7 @@ CONTROLEUR.partie = (function(){
 
     function confirmerAuthentification(autresParticipants)
     {
-        console.log("CONTROLEUR.partie --> confirmerAuthentification");
         ajouterAutresParticipants(autresParticipants);
-
         joueurLocal = creerJoueur(
           derterminerNumeroJoueur(autresParticipants),
           pseudonymeLocal);
@@ -55,9 +53,6 @@ CONTROLEUR.partie = (function(){
 
     }
     function recevoirVariable(variable){
-
-    console.log("Surcharge de recevoirVariable " + variable.cle + " = " + variable.valeur);
-
     [cle, numeroJoueur] = variable.cle.split("-");
     switch (cle) {
 
@@ -107,19 +102,11 @@ CONTROLEUR.partie = (function(){
 
     function isInitialisationTerrain()
     {
-      console.log("CONTROLEUR.partie --> isInitialisationTerrain listeJoueur.length : ",
-          listeJoueur.length);
-      console.log("CONTROLEUR.partie --> isInitialisationTerrain joueurLocal.numeroJoueur : ",
-          joueurLocal.numeroJoueur);
-      console.log("CONTROLEUR.partie --> isInitialisationTerrain listeJoueur.length > 1 && joueurLocal.numeroJoueur == 0 : ",
-          listeJoueur.length > 1 && joueurLocal.numeroJoueur == 0);
-
       return listeJoueur.length > 1 && joueurLocal.numeroJoueur == 0;
     }
 
     function initialiserTerrain()
     {
-      console.log("CONTROLEUR.partie --> initialiserTerrain");
       var groupeBouffeBoule = genererGroupeBouffeBoule();
       multiNode.posterVariableTextuelle(
         "terrain",
@@ -143,7 +130,7 @@ CONTROLEUR.partie = (function(){
     {
         switch (numeroJoueur) {
           case 0:
-            return "red";
+            return "yellow";
             break;
           case 1:
             return "blue";
@@ -216,8 +203,6 @@ CONTROLEUR.partie = (function(){
     }
     function apprendreAuthentification(pseudonyme)
     {
-        console.log("CONTROLEUR.partie --> apprendreAuthentification");
-        console.log("CONTROLEUR.partie --> apprendreAuthentification --> pseudonyme : ", pseudonyme);
         ajouterAutreJoueur(pseudonyme);
         //if(listeJoueur.length > 1) demarrerJeu();
         if(isInitialisationTerrain())
@@ -228,7 +213,6 @@ CONTROLEUR.partie = (function(){
 
     module.preparerJeu = function(pseudonyme,appliquerFinPartie)
     {
-        console.log("CONTROLEUR.partie --> preparerJeu");
         pseudonymeLocal = pseudonyme;
         appliquerFinPartieExterne = appliquerFinPartie;
         multiNode.connecter();
@@ -238,8 +222,6 @@ CONTROLEUR.partie = (function(){
         genererGroupeBouffeBoule();
         CONFIGURATION.ECRAN_LARGEUR = (window.innerWidth);
         CONFIGURATION.ECRAN_HAUTEUR = (window.innerHeight) - 55;
-        console.log("ecran hauteur", CONFIGURATION.ECRAN_HAUTEUR);
-        console.log("ecran largeur", CONFIGURATION.ECRAN_LARGEUR);
         vuePartie.afficher(
           CONFIGURATION.ECRAN_LARGEUR,
           CONFIGURATION.ECRAN_HAUTEUR,
@@ -247,11 +229,10 @@ CONTROLEUR.partie = (function(){
           groupeBouffeBoule,
           agirSurClic);
         preparerRafraichissementEcran();
-
+        createjs.Sound.registerSound("sons/open.mp3", "action");
     }
 
     function agirSurClic(evenement){
-    console.log("CONTROLEUR.partie --> agirSurClic");
     multiNode.posterVariableTextuelle(
       "directionJoueur-"+ joueurLocal.numeroJoueur,
       JSON.stringify(
