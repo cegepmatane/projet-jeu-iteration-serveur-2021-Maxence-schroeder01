@@ -18,6 +18,15 @@
   position: relative;
   
 }
+h1{
+  position: absolute;
+  content: "";
+  display: block;
+  top: 23vmin;
+  font-family: "Blippo", fantasy;
+  left: 27vmin;
+
+}
 
 #titre-acceuil::before {
   content: "";
