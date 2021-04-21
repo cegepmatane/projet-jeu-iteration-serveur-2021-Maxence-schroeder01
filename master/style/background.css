@@ -1,0 +1,21 @@
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+body {
+/*            overflow: hidden;*/
+	margin: 0 0;
+	font-family: arial;
+	width: 100wh;
+	height: 75vh;
+	color: #fff;
+	background-image: url(https://data.photofunky.net/output/image/b/f/e/2/bfe203/photofunky.gif);
+	background-size: 150% 150%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+
+
+

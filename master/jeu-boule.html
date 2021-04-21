@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+        <script src="lib/easeljs-0.8.2.min.js"></script>
+        <link rel="stylesheet" href="style/background.css" />
+        <link rel="stylesheet" href="style/page-accueil.css" />
+		<link rel="stylesheet" href="style/page-partie.css" />
+		<link rel="stylesheet" href="style/page-fin-partie.css" />
+      <style>
+
+      </style>
+
+      <script src="lib/svg.min.js"></script>
+      <script src="lib/MultiNode.js"></script>
+      <script src="action/vue/finPartie.js"></script>
+      <script src="action/vue/accueil.js"></script>
+      <script src="action/vue/partie.js"></script>
+      <script src="action/modele/Joueur.js"></script>
+      <script src="action/element/ArrierePlan.js"></script>
+      <script src="action/element/JoueurBoule.js"></script>
+      <script src="action/element/BouffeBoule.js"></script>
+      <script src="action/partie.js"></script>
+      <script src="action/application.js"></script>
+
+    </head>
+    <body>
+	
+      <script type="plain/text" id="page-accueil" >
+	  
+	  	<header>
+			<p id="accueilJeu">
+				BIENVENUE DANS L'ESPACE
+			</p>
+		</header>
+		
+		
+		 <div id="formulaire">
+		 	<form id="formulaire-authentification">
+					<div class="aide-surgissante" id="aide-pseudonyme"></div>
+					<label id="etiquette-pseudonyme" for="pseudonyme" title="Veuillez entrer votre nom ou un surnom pour pouvoir vous identifier dans le jeu. Bon jeu a vous !!">Pseudonyme</label>
+					<input type="text" id="pseudonyme" name="pseudonyme" placeholder="Taper" >
+					<button type="submit" value="Authentification" id="bouton-authentification" class="bouton-authentification bouton-authentification--primary bouton-authentification--inside uppercase">Entrer</button>
+			</form>
+		</div>		
+      </script>
+        
+      <script type="text/plain" id="page-partie">
+
+		<header>
+			<h2  id="titreJeu">Jeu de Guerre Spatiale</h2>
+		</header>
+		<nav id="menu">
+			<ul id="nav">
+				<li><a href="#accueil">Accueil</a></li>
+				<li><a href="#fin-partie-gagnee">Fin partie gagnée</a></li>
+				<li><a href="#fin-partie-perdue">Fin partie perdue</a></li>
+			</ul>
+		</nav>
+        <div id="canevas"></div>
+        
+      </script>
+
+      <script type="plain/text" id="page-fin-partie">
+
+          <div>
+		    <ul>
+				<a href="#accueil">Accueil</a>
+			</ul>
+			
+			<header>
+			  <h1>Fin de la partie</h1>
+			</header>
+             
+
+          </div>
+
+      </script>
+
+
+
+    </body>
+</html>

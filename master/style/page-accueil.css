@@ -1,0 +1,211 @@
+#accueil{
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+	flex-direction: column;  
+
+}
+
+#titre-acceuil {
+  
+  height: 12vmin;
+  width: 120vmin;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+}
+
+#titre-acceuil::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -29vmin;
+  left: 14vmin;
+  width: 73vmin;
+  height: 68vmin;
+  border-radius: 50%;
+  border: 1.3vmin solid currentColor;
+  box-sizing: border-box;
+}
+
+em {
+  font-family: "Blippo", fantasy;
+  color: currentColor;
+  font-size: 15vmin;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: red;
+  position: relative;
+  font-style: normal;
+  width: 20vmin;
+  text-align: center;
+}
+
+em.planet {
+  -webkit-animation: planet-rotate 4s linear infinite;
+  animation: planet-rotate 4s linear infinite;
+  position: relative;
+}
+
+em.planet::before {
+  content: "";
+  position: absolute;
+  top: -.5vmin;
+  left: 3.5vmin;
+  z-index: -1;
+  width: 13vmin;
+  height: 13vmin;
+  border-radius: 50%;
+  background: black;
+}
+
+em.planet.left {
+  -webkit-transform-origin: 40vmin 5vmin;
+  transform-origin: 42vmin 5vmin;
+}
+
+em.planet.right {
+  -webkit-transform-origin: -20vmin 5vmin;
+  transform-origin: -32vmin 5vmin;
+}
+
+@-webkit-keyframes planet-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+@keyframes planet-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+
+
+
+/*#accueilJeu
+{
+	font-family: "Blippo", fantasy;
+	font-size: 75px;
+	text-align: center;
+	top: 10%;
+	margin: 0 0;
+	
+	text-shadow:0 1px 0 #ccc, 
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+			   0 20px 20px rgba(0,0,0,.15);color:#fff;
+
+}*/
+
+#accueilJeu
+{
+	font-size: 75pt;
+	font-family: "Blippo", fantasy;
+	color: #fff;
+	margin: auto;
+	text-align: center;
+	background-color: red;
+	padding-top:15px;
+	padding-bottom:20px;
+
+	margin: 0 0;
+
+	text-shadow: 0px -6px 0 #212121, 0px -6px 0 #212121, 0px 6px 0 #212121,
+    0px 6px 0 #212121, -6px 0px 0 #212121, 6px 0px 0 #212121, -6px 0px 0 #212121,
+    6px 0px 0 #212121, -6px -6px 0 #212121, 6px -6px 0 #212121,
+    -6px 6px 0 #212121, 6px 6px 0 #212121, -6px 18px 0 #212121,
+    0px 18px 0 #212121, 6px 18px 0 #212121, 0 19px 1px rgba(0, 0, 0, 0.1),
+    0 0 6px rgba(0, 0, 0, 0.1), 0 6px 3px rgba(0, 0, 0, 0.3),
+    0 12px 6px rgba(0, 0, 0, 0.2), 0 18px 18px rgba(0, 0, 0, 0.25),
+    0 24px 24px rgba(0, 0, 0, 0.2), 0 36px 36px rgba(0, 0, 0, 0.15);
+}
+
+#formulaire-authentification{
+}
+
+#formulaire{
+	 padding: 100px;
+	 align-items:center;
+	 margin: auto;
+	 width: 50%;
+}
+
+
+
+.aide-surgissante
+{
+	position:absolute;
+	top:0;
+	left:0;
+	size:18;
+	font-weight:bold;
+	background-color:black;
+	color:white;
+	padding:3px;
+	line-height:24px;
+	display:none;
+}
+
+label
+{
+  cursor:pointer;
+}
+
+
+#pseudonyme {	
+	 
+		width: 360px;
+		background: #fff;
+		color: #a3a3a3;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+		border: 0;
+		outline: 0;
+		padding: 22px 18px;
+		border-radius:22px;
+}
+
+.bouton-authentification {
+	box-shadow: 9px 5px 10px -2px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:18px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:18px;
+	font-weight:bold;
+	padding:14px 28px;
+
+	text-decoration:none;
+	text-shadow:0px 3px 4px #810e05;
+}
+.bouton-authentification:hover {
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	background-color:#f24437;
+}
+.bouton-authentification:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
