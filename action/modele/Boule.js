@@ -1,6 +1,6 @@
 var MODELE = MODELE || {};
 
-MODELE.Boulle = function(){
+MODELE.Boule = function(){
 
     palette = this;
     this.direction;

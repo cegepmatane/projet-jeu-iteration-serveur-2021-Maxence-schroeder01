@@ -14,7 +14,6 @@ MODELE.Joueur = function(
   distance){
 
     joueur = this;
-  //  this.pointage;
     this.numeroJoueur;
     this.pseudonyme;
     this.couleur;
@@ -29,9 +28,6 @@ MODELE.Joueur = function(
 
 
     (function initialiser(){
-
-        //joueur.pointage = pointage;
-        //joueur.joueurActif = joueurActif;
         joueur.numeroJoueur = numeroJoueur;
         joueur.pseudonyme = pseudonyme;
         joueur.couleur = couleur;
@@ -43,8 +39,6 @@ MODELE.Joueur = function(
         joueur.velociteX = velociteX;
         joueur.velociteY = velociteY;
         joueur.distance = distance;
-
-
     })();
 
 }
