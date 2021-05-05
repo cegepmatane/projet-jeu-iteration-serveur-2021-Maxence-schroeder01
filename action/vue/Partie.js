@@ -14,9 +14,9 @@ VUE.partie = (function(){
 
     var arrierePlan;
 
-    var joueurBoulle1;
-    var listeJoueurBoulle;
-    var groupeBouffeBoulle;
+    var joueurBoule1;
+    var listeJoueurBoule;
+    var groupeBouffeBoule;
 
 
     (function initialiser(){
@@ -37,7 +37,7 @@ VUE.partie = (function(){
         nouvelleLargeur,
         nouvelleHauteur,
         listeJoueur,
-        nouveauGroupeBouffeBoulle,
+        nouveauGroupeBouffeBoule,
         agirSurClic){
 
         body.innerHTML = pagePartieContenu;
@@ -52,87 +52,80 @@ VUE.partie = (function(){
         arrierePlan = new ArrierePlan(canevas);
         arrierePlan.afficher();
 
-        groupeBouffeBoulle = [];
-        afficherGroupeBouffeBoulle(nouveauGroupeBouffeBoulle);
-        listeJoueurBoulle = [];
+        groupeBouffeBoule = [];
+        afficherGroupeBouffeBoule(nouveauGroupeBouffeBoule);
+        listeJoueurBoule = [];
 
         for(
           var indiceJoueur = 0;
           indiceJoueur < listeJoueur.length;
           indiceJoueur++)
         {
-          listeJoueurBoulle[indiceJoueur] = new JoueurBoulle(canevas);
-          listeJoueurBoulle[indiceJoueur].afficher(
+          listeJoueurBoule[indiceJoueur] = new JoueurBoule(canevas);
+          listeJoueurBoule[indiceJoueur].afficher(
             listeJoueur[indiceJoueur].couleur,
             listeJoueur[indiceJoueur].pseudonyme,
             listeJoueur[indiceJoueur].diametre,
             listeJoueur[indiceJoueur].positionX,
             listeJoueur[indiceJoueur].positionY);
         }
-        //joueurBoulle1 = new JoueurBoulle(canevas);
-      /*joueurBoulle1.afficher(
-          joueur1.couleur,
-          joueur1.diametre,
-          joueur1.positionX,
-          joueur1.positionY,);*/
-
         canevas.on('click', agirSurClic);
 
     }
 
-    module.getJoueurBoullePosition = function(numeroJoueur){
-      if(listeJoueurBoulle[numeroJoueur])
-          return listeJoueurBoulle[numeroJoueur].getPosition();
+    module.getJoueurBoulePosition = function(numeroJoueur){
+      if(listeJoueurBoule[numeroJoueur])
+          return listeJoueurBoule[numeroJoueur].getPosition();
 
       return null;
     }
 
-    module.setJoueurBoullePosition = function(numeroJoueur,x,y){
-      if(listeJoueurBoulle[numeroJoueur])
-          listeJoueurBoulle[numeroJoueur].setPosition(x,y);
+    module.setJoueurBoulePosition = function(numeroJoueur,x,y){
+      if(listeJoueurBoule[numeroJoueur])
+          listeJoueurBoule[numeroJoueur].setPosition(x,y);
     }
 
-    module.deplacerJoueurBoulle = function(
+    module.deplacerJoueurBoule = function(
         numeroJoueur,
         deplacementX,
         deplacementY)
     {
-      if(listeJoueurBoulle[numeroJoueur])
-        listeJoueurBoulle[numeroJoueur].deplacer(deplacementX, deplacementY);
+      if(listeJoueurBoule[numeroJoueur])
+        listeJoueurBoule[numeroJoueur].deplacer(deplacementX, deplacementY);
     }
-    module.cacherGroupeBouffeBoulle = function(groupeBouffeBoulleMange)
+    module.cacherGroupeBouffeBoule = function(groupeBouffeBouleMange)
     {
-      console.log("partie --> cacherGroupeBouffeBoulle --> groupeBouffeBoulleMange.length : ", groupeBouffeBoulleMange.length);
+      console.log("partie --> cacherGroupeBouffeBoule --> groupeBouffeBouleMange.length : ", groupeBouffeBouleMange.length);
       for(
-        var indiceBoulle = 0;
-        indiceBoulle < groupeBouffeBoulleMange.length;
-        indiceBoulle++)
+        var indiceBoule = 0;
+        indiceBoule < groupeBouffeBouleMange.length;
+        indiceBoule++)
       {
-        groupeBouffeBoulle[groupeBouffeBoulleMange[indiceBoulle]].cacher();
-        console.log ("partie --> cacherGroupeBouffeBoulle : ", groupeBouffeBoulle[groupeBouffeBoulleMange[indiceBoulle]]);
+        groupeBouffeBoule[groupeBouffeBouleMange[indiceBoule]].cacher();
+        console.log ("partie --> cacherGroupeBouffeBoule : ", groupeBouffeBoule[groupeBouffeBouleMange[indiceBoule]]);
       }
     }
 
-    function afficherGroupeBouffeBoulle(nouveauGroupeBouffeBoulle)
+    function afficherGroupeBouffeBoule(nouveauGroupeBouffeBoule)
     {
       for(
-        var indiceBoulle = 0;
-        indiceBoulle < nouveauGroupeBouffeBoulle.length;
-        indiceBoulle++)
+        var indiceBoule = 0;
+        indiceBoule < nouveauGroupeBouffeBoule.length;
+        indiceBoule++)
       {
-        var bouffeBoulle = new BouffeBoulle(canevas);
-        groupeBouffeBoulle[indiceBoulle] = bouffeBoulle;
-        bouffeBoulle.afficher(
-          nouveauGroupeBouffeBoulle[indiceBoulle].x,
-          nouveauGroupeBouffeBoulle[indiceBoulle].y);
+        var bouffeBoule = new BouffeBoule(canevas);
+        groupeBouffeBoule[indiceBoule] = bouffeBoule;
+        bouffeBoule.afficher(
+          nouveauGroupeBouffeBoule[indiceBoule].x,
+          nouveauGroupeBouffeBoule[indiceBoule].y);
       }
 
     }
 
-    module.grossirJoueurBoulle = function(numeroJoueur, diametre)
+    module.grossirJoueurBoule = function(numeroJoueur, diametre)
     {
-      if(listeJoueurBoulle[numeroJoueur])
-          listeJoueurBoulle[numeroJoueur].grossir(diametre);
+      if(listeJoueurBoule[numeroJoueur])
+          listeJoueurBoule[numeroJoueur].grossir(diametre);
     }
 
     return module;
