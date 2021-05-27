@@ -1,0 +1,17 @@
+#fuseeApercu{
+
+}
+#fuseeApercu #flame1{
+  animation: mouvement 5s ease infinite;
+}
+#fuseeApercu #flame2{
+  animation: mouvement 5s ease infinite;
+}
+#fuseeApercu #flame3{
+  animation: mouvement 5s ease infinite;
+}
+@keyframes mouvement {
+  0% { transform: translate(0px);  }
+  50% { transform: translate(30px, 30px);  }
+  100% { transform: translate(0px);  }
+}
